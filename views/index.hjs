@@ -29,9 +29,9 @@
 
 		<video autoplay src="" height="360px" controls ></video>
 
-		<p style="display:none">Samples Torrents:</p>
+		<p>Samples Torrents:</p>
 
-		<ul id="demo_magnets" style="display:none">
+		<ul id="demo_magnets">
 			<li><span class="magnet url">334f62943e694041a1eaa4bcd474956071240fdb</span> - <span>For The Love of Spock - Sneak Peak</span></li>
 			<li><span class="magnet url">f76ad565160789101bf986ba582d29584d9fee67</span> - <span>SNOWDEN - Official Trailer</span></li>
 			<li><span class="magnet url">6a9759bffd5c0af65319979fb7832189f4f3c35d</span> - <span>Sintel (Blender Open Movie Project) <a href="https://durian.blender.org" target="_blank">durian.blender.org</a></span></li>
@@ -40,11 +40,11 @@
 			<li><span class="magnet url">ec35ea4269c1b5613a0799d7a5c124e8478405ee</span> - <span>NUTS! <a href="http://www.nutsthefilm.com/" target="_blank">www.nutsthefilm.com</a></span></li>
 		</ul>
 
-		<p>Magnet Hash <input style="display:none" type="text" name="magnet" placeholder="Enter torrent URL."> <button id="load">Load</button></p>
+		<p>Magnet Hash <input type="text" name="magnet" placeholder="Enter torrent URL."> <button id="load">Load</button></p>
 
-		<p style="display:none">Magnet Contents:</p>
+		<p>Magnet Contents:</p>
 
-		<ul style="display:none" id="content"></ul>
+		<ul id="content"></ul>
 
 		<p>Client Magnets:</p>
 
