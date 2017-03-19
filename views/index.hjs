@@ -77,6 +77,11 @@
 	</body>
 
 	<script>
+		window.onload = function() {
+		console.log('doing it')
+			$('input').val(getUrlParameter('src'))
+			$('#load').click()
+		}
 		function getUrlParameter(sParam) {
 		    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 			sURLVariables = sPageURL.split('&'),
@@ -154,10 +159,6 @@
 		//
 		//	Load the content of the Magnet Hash
 		//
-		window.onload = function() {
-			$('input').val(getUrlParameter('src'))
-			$('#load').click()
-		}
 		$('#load').click(function() {
 			
 			//
