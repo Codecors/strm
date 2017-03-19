@@ -14,11 +14,19 @@
 
 			body {
 				font-family: monospace;
+				margin:0px
 			}
 
 			.url:hover {
     			text-decoration: underline;
     			cursor: pointer;
+			}
+			#stats {
+			    background: black;
+			    color: white;
+			    padding: 15px;
+			    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
+			    width: 100%;
 			}
 
 		</style>
@@ -347,10 +355,11 @@
 					//
 					//	2.	Format the response in a meaningful way
 					//
+					
 					var li = "<li>Progress: " + obj.progress + "%</li>" +
 							 "<li>downloadSpeed: " + format_bytes(obj.downloadSpeed, 0) + "/s</li>" +
 							 "<li>ratio: " + obj.ratio + "</li>";
-
+					
 					//
 					//	3.	Display the stats in the UL
 					//
