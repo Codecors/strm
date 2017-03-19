@@ -30,6 +30,25 @@
 			    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
 			    width: 100%;
 			}
+			#load{
+				background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+				border: none;
+			    display: inline-block;
+			    outline: 0;
+			    min-width: 5.14em;
+			    padding: 6px 16px;
+			    vertical-align: middle;
+			    overflow: hidden;
+			    text-decoration: none!important;
+			    color: #fff;
+			    background-color: #000;
+			    text-align: center;
+			    cursor: pointer;
+			    border-radius: 2.5px;
+			    text-transform: uppercase;
+			    white-space: nowrap;
+			    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+			}
 
 		</style>
 
@@ -50,7 +69,7 @@
 			<li><span class="magnet url">ec35ea4269c1b5613a0799d7a5c124e8478405ee</span> - <span>NUTS! <a href="http://www.nutsthefilm.com/" target="_blank">www.nutsthefilm.com</a></span></li>
 		</ul>
 
-		<p style="display:none">Magnet Hash <input type="text" name="magnet" placeholder="Enter torrent URL."> <button id="load">Load</button></p>
+		<p ><input style="display:none" type="text" name="magnet" placeholder="Enter torrent URL."> <button id="load">Load</button></p>
 
 		<p style="display:none">Magnet Contents:</p>
 
@@ -382,7 +401,7 @@
 					//
 					$("#stats").append(li);
 					console.log(obj.progress)
-					if (obj.progress == 100) {
+					if (obj.progress > 99.5 || obj.progress > 99.9 || obj.progress > 99.8 || obj.progress > 99.6) {
 						var filename = $( ".file[data-size="+y+"]" ).attr('data-name')
 						var magnet = $('input').val();
 						//
