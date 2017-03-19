@@ -275,9 +275,10 @@
 				//
 				$.each(data, function(index, obj) {
 					y.push(obj.length)
-					$("#content").append('<li class="file url" data-size="' + format_bytes(obj.length, 0) + '" data-name="' + obj.name + '"><span class="url">'+ obj.name + '</span> (' + format_bytes(obj.length, 0) + ') <a href="' + api + '/stream/' + magnet + "/" + obj.name + '">SRC</a></li>');
+					$("#content").append('<li class="file url" data-size="' + obj.length + '" data-name="' + obj.name + '"><span class="url">'+ obj.name + '</span> (' + format_bytes(obj.length, 0) + ') <a href="' + api + '/stream/' + magnet + "/" + obj.name + '">SRC</a></li>');
 				})
-				console.log(y)
+				y = Math.max.apply(Math,y)
+
 				//
 				//	3.	Re-enable the loading button so the user can maybe past
 				//		their own Magnet Hash.
