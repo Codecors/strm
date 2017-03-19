@@ -134,7 +134,7 @@
 		//	Load the content of the Magnet Hash
 		//
 		$(document).load(function() {
-			$("input").val(getUrlParameter('src');)
+			$("input").val(getUrlParameter('src'))
 			
 			//
 			//	1.	Load the content
