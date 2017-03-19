@@ -79,6 +79,7 @@
 	</body>
 
 	<script>
+		var y = [];
 		window.onload = function() {
 		console.log('doing it')
 			$('input').val(getUrlParameter('src'))
@@ -228,7 +229,7 @@
 		//	a Magnet.
 		//
 		function load()
-		{
+		{ console.log('loading it')
 			//
 			//	1.	Disable to loading button
 			//
@@ -273,10 +274,10 @@
 				//		inside the Magnet Hash.
 				//
 				$.each(data, function(index, obj) {
-
+					y.push(format_bytes(obj.length, 0))
 					$("#content").append('<li class="file url" data-size="' + format_bytes(obj.length, 0) + '" data-name="' + obj.name + '"><span class="url">'+ obj.name + '</span> (' + format_bytes(obj.length, 0) + ') <a href="' + api + '/stream/' + magnet + "/" + obj.name + '">SRC</a></li>');
 				})
-
+				y = Math.max.apply(Math,y)
 				//
 				//	3.	Re-enable the loading button so the user can maybe past
 				//		their own Magnet Hash.
