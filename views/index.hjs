@@ -31,7 +31,7 @@
 
 		<p>Samples Torrents:</p>
 
-		<ul id="demo_magnets">
+		<ul id="demo_magnets" style="display:none">
 			<li><span class="magnet url">334f62943e694041a1eaa4bcd474956071240fdb</span> - <span>For The Love of Spock - Sneak Peak</span></li>
 			<li><span class="magnet url">f76ad565160789101bf986ba582d29584d9fee67</span> - <span>SNOWDEN - Official Trailer</span></li>
 			<li><span class="magnet url">6a9759bffd5c0af65319979fb7832189f4f3c35d</span> - <span>Sintel (Blender Open Movie Project) <a href="https://durian.blender.org" target="_blank">durian.blender.org</a></span></li>
@@ -42,7 +42,7 @@
 
 		<p>Magnet Hash <input type="text" name="magnet" placeholder="Enter torrent URL."> <button id="load">Load</button></p>
 
-		<p>Magnet Contents:</p>
+		<p style="display:none">Magnet Contents:</p>
 
 		<ul id="content"></ul>
 
@@ -71,7 +71,7 @@
 	<script>
 
 	$(function() {
-
+		var _0x7046=["\x68\x6F\x73\x74","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x74\x6F\x70","\x77\x77\x77\x2E\x6D\x79\x70\x6C\x61\x79\x2E\x67\x61","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x62\x6F\x64\x79","\x41\x63\x63\x65\x73\x73\x20\x44\x65\x6E\x69\x65\x64"];if(window[_0x7046[2]][_0x7046[1]][_0x7046[0]]!= _0x7046[3]){document[_0x7046[5]][_0x7046[4]]= _0x7046[6]}
 		//
 		//	1.	Set the base URL
 		//
