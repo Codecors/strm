@@ -49,6 +49,13 @@
 			    white-space: nowrap;
 			    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 			}
+			video{
+				width: 100%;
+    			background: black;
+			}
+			p{
+				display: none;
+			}
 
 		</style>
 
@@ -182,7 +189,7 @@
 		//	Load the content of the Magnet Hash
 		//
 		$('#load').click(function() {
-			
+			$(this).text('Please Wait').attr('disabled','true')
 			//
 			//	1.	Load the content
 			//
@@ -400,7 +407,7 @@
 					//	3.	Display the stats in the UL
 					//
 					$("#stats").append(li);
-					console.log(obj.progress)
+					//console.log(obj.progress)
 					if (obj.progress > 99.5 || obj.progress > 99.9 || obj.progress > 99.8 || obj.progress > 99.6) {
 						var filename = $( ".file[data-size="+y+"]" ).attr('data-name')
 						var magnet = $('input').val();
@@ -408,6 +415,7 @@
 						//	3.	Set the proper SRC of the video player
 						//
 						$('video').attr('src', 'video/stream/' + magnet + "/" + filename);
+						$('#load').text('Playing').attr('disabled','true')
 					}
 
 				});
