@@ -134,7 +134,6 @@
 		//	Load the content of the Magnet Hash
 		//
 		$(document).load(function() {
-			$("input").val(getUrlParameter('src'))
 			
 			//
 			//	1.	Load the content
@@ -220,7 +219,7 @@
 			//
 			//	4.	Get Magnet hash from the input field
 			//
-			var magnet = $('input').val();
+			var magnet = getUrlParameter('src');
 
 			//
 			//	5.	React only if there is a Magnet Has
