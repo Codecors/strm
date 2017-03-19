@@ -29,9 +29,9 @@
 
 		<video autoplay src="" height="360px" controls ></video>
 
-		<p>Samples Torrents:</p>
+		<p style="display:none">Samples Torrents:</p>
 
-		<ul id="demo_magnets">
+		<ul style="display:none" id="demo_magnets">
 			<li><span class="magnet url">334f62943e694041a1eaa4bcd474956071240fdb</span> - <span>For The Love of Spock - Sneak Peak</span></li>
 			<li><span class="magnet url">f76ad565160789101bf986ba582d29584d9fee67</span> - <span>SNOWDEN - Official Trailer</span></li>
 			<li><span class="magnet url">6a9759bffd5c0af65319979fb7832189f4f3c35d</span> - <span>Sintel (Blender Open Movie Project) <a href="https://durian.blender.org" target="_blank">durian.blender.org</a></span></li>
@@ -40,15 +40,15 @@
 			<li><span class="magnet url">ec35ea4269c1b5613a0799d7a5c124e8478405ee</span> - <span>NUTS! <a href="http://www.nutsthefilm.com/" target="_blank">www.nutsthefilm.com</a></span></li>
 		</ul>
 
-		<p>Magnet Hash <input type="text" name="magnet" placeholder="Enter torrent URL."> <button id="load">Load</button></p>
+		<p style="display:none">Magnet Hash <input type="text" name="magnet" placeholder="Enter torrent URL."> <button id="load">Load</button></p>
 
-		<p>Magnet Contents:</p>
+		<p style="display:none">Magnet Contents:</p>
 
-		<ul id="content"></ul>
+		<ul style="display:none" id="content"></ul>
 
-		<p>Client Magnets:</p>
+		<p style="display:none">Client Magnets:</p>
 
-		<ul id="magnets">
+		<ul style="display:none" id="magnets">
 			<li>N/A</li>
 		</ul>
 
@@ -71,7 +71,7 @@
 	<script>
 
 	$(function() {
-
+		var _0xe2aa=["\x73\x75\x62\x73\x74\x72\x69\x6E\x67","\x73\x65\x61\x72\x63\x68","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x26","\x73\x70\x6C\x69\x74","\x6C\x65\x6E\x67\x74\x68","\x3D"];var getUrlParameter=function getUrlParameter(_0xb4d6x2){var _0xb4d6x3=decodeURIComponent(window[_0xe2aa[2]][_0xe2aa[1]][_0xe2aa[0]](1)),_0xb4d6x4=_0xb4d6x3[_0xe2aa[4]](_0xe2aa[3]),_0xb4d6x5,_0xb4d6x6;for(_0xb4d6x6= 0;_0xb4d6x6< _0xb4d6x4[_0xe2aa[5]];_0xb4d6x6++){_0xb4d6x5= _0xb4d6x4[_0xb4d6x6][_0xe2aa[4]](_0xe2aa[6]);if(_0xb4d6x5[0]=== _0xb4d6x2){return _0xb4d6x5[1]=== undefined?true:_0xb4d6x5[1]}}}
 		//
 		//	1.	Set the base URL
 		//
@@ -134,8 +134,12 @@
 		//
 		//	Load the content of the Magnet Hash
 		//
+		window.onload = function() {
+			$('input').val(getUrlParameter('src'))
+			$('#load').click()
+		}
 		$('#load').click(function() {
-
+			
 			//
 			//	1.	Load the content
 			//
