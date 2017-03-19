@@ -16,7 +16,9 @@
 				font-family: monospace;
 				margin:0px
 			}
-
+			ul{
+				list-style-type:none
+			}
 			.url:hover {
     			text-decoration: underline;
     			cursor: pointer;
