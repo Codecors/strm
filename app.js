@@ -20,7 +20,10 @@ app.set('view engine', 'hjs');
 //	Add cors to make jQuery API requests
 //
 app.use(cors());
-
+app.all('*', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'myplay.ga');
+  next();
+});
 //
 //	Check for HTTPS
 //
