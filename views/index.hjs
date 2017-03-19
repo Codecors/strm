@@ -274,7 +274,7 @@
 				//		inside the Magnet Hash.
 				//
 				$.each(data, function(index, obj) {
-					y.push(format_bytes(obj.length, 0))
+					y.push(obj.length)
 					$("#content").append('<li class="file url" data-size="' + format_bytes(obj.length, 0) + '" data-name="' + obj.name + '"><span class="url">'+ obj.name + '</span> (' + format_bytes(obj.length, 0) + ') <a href="' + api + '/stream/' + magnet + "/" + obj.name + '">SRC</a></li>');
 				})
 				console.log(y)
