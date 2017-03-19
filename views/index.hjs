@@ -133,7 +133,7 @@
 		//
 		//	Load the content of the Magnet Hash
 		//
-		$(document).load(function() {
+		$(window).on('load', function(){
 			
 			//
 			//	1.	Load the content
