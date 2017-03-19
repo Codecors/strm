@@ -79,8 +79,20 @@
 	<script>
 
 	$(function() {
-		var _0xe2aa=["\x73\x75\x62\x73\x74\x72\x69\x6E\x67","\x73\x65\x61\x72\x63\x68","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x26","\x73\x70\x6C\x69\x74","\x6C\x65\x6E\x67\x74\x68","\x3D"];var getUrlParameter=function getUrlParameter(_0xb4d6x2){var _0xb4d6x3=decodeURIComponent(window[_0xe2aa[2]][_0xe2aa[1]][_0xe2aa[0]](1)),_0xb4d6x4=_0xb4d6x3[_0xe2aa[4]](_0xe2aa[3]),_0xb4d6x5,_0xb4d6x6;for(_0xb4d6x6= 0;_0xb4d6x6< _0xb4d6x4[_0xe2aa[5]];_0xb4d6x6++){_0xb4d6x5= _0xb4d6x4[_0xb4d6x6][_0xe2aa[4]](_0xe2aa[6]);if(_0xb4d6x5[0]=== _0xb4d6x2){return _0xb4d6x5[1]=== undefined?true:_0xb4d6x5[1]}}}
-		//
+		var getUrlParameter = function getUrlParameter(sParam) {
+		    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+			sURLVariables = sPageURL.split('&'),
+			sParameterName,
+			i;
+
+		    for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+			    return sParameterName[1] === undefined ? true : sParameterName[1];
+			}
+		    }
+		};
 		//	1.	Set the base URL
 		//
 		var api = "{{base_url}}/video";
