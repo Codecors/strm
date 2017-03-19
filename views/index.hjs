@@ -77,9 +77,7 @@
 	</body>
 
 	<script>
-
-	$(function() {
-		var getUrlParameter = function getUrlParameter(sParam) {
+		function getUrlParameter(sParam) {
 		    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 			sURLVariables = sPageURL.split('&'),
 			sParameterName,
@@ -93,6 +91,8 @@
 			}
 		    }
 		};
+	$(function() {
+
 		//	1.	Set the base URL
 		//
 		var api = "{{base_url}}/video";
