@@ -27,7 +27,7 @@ app.all('*', function(req, res, next) {
 //
 //	Check for HTTPS
 //
-app.use(force_https);
+//app.use(force_https);
 
 //
 //	Expose the public folder to the world
