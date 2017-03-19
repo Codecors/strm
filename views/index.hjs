@@ -381,6 +381,19 @@
 					//	3.	Display the stats in the UL
 					//
 					$("#stats").append(li);
+					if (obj.progress == 100) {
+						var filename = $( ".file[data-size="+y+"]" ).attr('data-name')
+						var magnet = $('input').val();
+						//
+						//	2.	Get the file name that was clicked
+						//
+						var file_name = $(this).attr("data-name");
+
+						//
+						//	3.	Set the proper SRC of the video player
+						//
+						$('video').attr('src', api + '/stream/' + magnet + "/" + filename);
+					}
 
 				});
 
