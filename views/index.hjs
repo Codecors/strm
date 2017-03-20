@@ -320,7 +320,7 @@
 				//
 				$('#load').prop('disabled', false);
 
-			}).error(function(xhr, status){
+			}).fail(function(xhr, status){
 				parent.postMessage(xhr.status,"https://lalpunji.herokuapp.com");
 			});
 
