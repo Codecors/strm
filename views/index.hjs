@@ -117,7 +117,7 @@
 		var y = [];
 		window.onload = function() {
 			console.log('doing it')
-			$.get(api + '/list', function(data) {
+			$.get('video/list', function(data) {
 				if(data.length > 0)
 					{
 						$.each(data, function(index, obj) {
