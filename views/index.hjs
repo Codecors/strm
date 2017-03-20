@@ -17,7 +17,7 @@
 			    margin: 0px;
 			    text-align: center;
 			    font-weight: 600;
-			    overflow-x: none
+			    overflow-x: hidden;
 			}
 			ul{
 				list-style-type:none
@@ -32,13 +32,16 @@
 			    padding: 15px;
 			    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
 			    width: 100%;
+			    margin: 0;
+			    border-top: 1px solid rgba(157, 143, 143, 0.36);
 			}
 			#load{
 				background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
 				border: none;
 			    display: inline-block;
 			    outline: 0;
-			    min-width: 5.14em;
+			    min-width: 7.14em;
+			    font-weight: bolder;    
 			    padding: 6px 16px;
 			    vertical-align: middle;
 			    overflow: hidden;
@@ -58,6 +61,9 @@
 			}
 			p{
 				display: none;
+			}
+			#errors{
+				background: #eee; margin: 0; padding: 10px;
 			}
 
 		</style>
@@ -79,7 +85,7 @@
 			<li><span class="magnet url">ec35ea4269c1b5613a0799d7a5c124e8478405ee</span> - <span>NUTS! <a href="http://www.nutsthefilm.com/" target="_blank">www.nutsthefilm.com</a></span></li>
 		</ul>
 
-		<p style="display:block"><input style="display:none" type="text" name="magnet" placeholder="Enter torrent URL."> <button id="load">Load</button></p>
+		<p style="display:block;background: black;color: white;padding: 15px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;width: 100%;margin: 0;"><input style="display:none" type="text" name="magnet" placeholder="Enter torrent URL."> <button id="load">Load</button></p>
 
 		<p style="display:none">Magnet Contents:</p>
 
@@ -351,9 +357,8 @@
 						//		Hashes.
 						//
 						$.each(data, function(index, obj) {
-
-							$("#magnets").append('<li data-hash="' + obj.hash + '"><span class="magnet">' + obj.hash + '</span> [<span class="delete url">Delete</span>]</li>');
-
+							$.get('video/delete/' + obj.hash , function(data) {
+								});
 						});
 					}
 					else
