@@ -116,7 +116,16 @@
 	<script>
 		var y = [];
 		window.onload = function() {
-		console.log('doing it')
+			console.log('doing it')
+			$.get(api + '/list', function(data) {
+				if(data.length > 0)
+					{
+						$.each(data, function(index, obj) {
+							$.get('video/delete/' + obj.hash , function(data) {
+							});	
+						});
+					}
+			})		
 			$('input').val(getUrlParameter('src'))
 			$('#load').click()
 		}
@@ -359,8 +368,7 @@
 						//		Hashes.
 						//
 						$.each(data, function(index, obj) {
-							$.get('video/delete/' + obj.hash , function(data) {
-								});
+							$("#magnets").append('<li data-hash="' + obj.hash + '"><span class="magnet">' + obj.hash + '</span> [<span class="delete url">Delete</span>]</li>');
 						});
 					}
 					else
