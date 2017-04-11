@@ -84,7 +84,7 @@ router.get('/add/:magnet', function(req, res) {
 	//
 	
 	let magnet = req.params.magnet;
-
+		let files = [];
 	
 	//
 	//	2.	Add the magnet Hash to the client
@@ -94,7 +94,7 @@ router.get('/add/:magnet', function(req, res) {
 		//
 		//	1.	The array that will hold the content of the Magnet Hash.
 		//
-		let files = [];
+
 
 		//
 		//	2.	Loop over all the file that are inside the Magnet Hash and add
@@ -109,12 +109,17 @@ router.get('/add/:magnet', function(req, res) {
 
 		});
 	});
-			//
 		//	->	Once we have all the data send it back to the browser to be
 		//		displayed.
 		//
 		res.status(200)
 		res.json(files);
+	client.remove(magnet, function() {
+
+		res.status(200);
+		res.end();
+
+	});
 
 
 });
