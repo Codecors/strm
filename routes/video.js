@@ -108,12 +108,13 @@ router.get('/add/:magnet', function(req, res) {
 			});
 
 		});
-	});
-		//	->	Once we have all the data send it back to the browser to be
+				//	->	Once we have all the data send it back to the browser to be
 		//		displayed.
 		//
 		res.status(200)
 		res.json(files);
+	});
+
 	client.remove(magnet, function() {});
 
 
