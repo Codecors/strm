@@ -108,14 +108,12 @@ router.get('/add/:magnet', function(req, res) {
 			});
 
 		});
-		torrent.on('progress', function(){
-			torrent.destroy()
-		})
 				//	->	Once we have all the data send it back to the browser to be
 		//		displayed.
 		//
 		res.status(200)
 		res.json(files);
+		torrent.destroy()
 	});
 
 
