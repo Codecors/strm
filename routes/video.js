@@ -85,7 +85,7 @@ router.get('/add/:magnet', function(req, res) {
 	
 	let magnet = req.params.magnet;
 	let files = [];
-	
+	if(client.get(magnet) != null){	client.remove(magnet, function() {});}
 	//
 	//	2.	Add the magnet Hash to the client
 	//
@@ -113,7 +113,6 @@ router.get('/add/:magnet', function(req, res) {
 		//
 		res.status(200)
 		res.json(files);
-		torrent.destroy()
 	});
 
 
