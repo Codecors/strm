@@ -82,8 +82,10 @@ router.get('/add/:magnet', function(req, res) {
 	//
 	//	1.	Extract the magnet Hash and save it in a meaningful variable.
 	//
+	
 	let magnet = req.params.magnet;
 
+	
 	//
 	//	2.	Add the magnet Hash to the client
 	//
@@ -106,19 +108,18 @@ router.get('/add/:magnet', function(req, res) {
 			});
 
 		});
-
-		//
+	});
+			//
 		//	->	Once we have all the data send it back to the browser to be
 		//		displayed.
 		//
 		res.status(200)
 		res.json(files);
-
-	});
 	client.remove(magnet, function() {
 		res.status(200);
 		res.end();
 	});
+
 });
 
 //
