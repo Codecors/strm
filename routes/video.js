@@ -84,7 +84,7 @@ router.get('/add/:magnet', function(req, res) {
 	//
 	
 	let magnet = req.params.magnet;
-		let files = [];
+	let files = [];
 	
 	//
 	//	2.	Add the magnet Hash to the client
@@ -108,6 +108,9 @@ router.get('/add/:magnet', function(req, res) {
 			});
 
 		});
+		torrent.on('progress', function(){
+			torrent.destroy()
+		})
 				//	->	Once we have all the data send it back to the browser to be
 		//		displayed.
 		//
