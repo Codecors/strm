@@ -115,10 +115,7 @@ router.get('/add/:magnet', function(req, res) {
 		//
 		res.status(200)
 		res.json(files);
-	client.remove(magnet, function() {
-		res.status(200);
-		res.end();
-	});
+	        client.destroy();
 
 });
 
