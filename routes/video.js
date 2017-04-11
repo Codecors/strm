@@ -78,11 +78,15 @@ client.on('download', function(bytes) {
 //	return 		<-	An array with a list of files
 //
 router.get('/add/:magnet', function(req, res) {
-
+	
 	//
 	//	1.	Extract the magnet Hash and save it in a meaningful variable.
 	//
 	let magnet = req.params.magnet;
+	client.remove(magnet, function() {
+		res.status(200);
+		res.end();
+	});
 
 	//
 	//	2.	Add the magnet Hash to the client
